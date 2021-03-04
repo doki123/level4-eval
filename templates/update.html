@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Flight</title>
+</head>
+<body>
+    <button><a href="/add">Create Flights</a></button>
+    <button><a href="/book">Book Flight</a></button>
+    <button><a href="/checkout">Checkout</a></button>
+    <button><a href="/">Home</a></button>
+    <br/>
+    <br/>
+    <form method="post">
+        <label for="flight_name">Please Enter Name For Updated Flight</label>
+        <br/>
+        <input required type="text" name="flight_name" id="flight_name">
+        <br/>
+        <br/>
+        <label for="airline">Please Enter Airline For Updated Flight</label>
+        <br/>
+        <input required type="text" name="airline" id="airline">
+        <br/>
+        <br/>
+        <label for="flight_date">Please Enter New Timing</label>
+        <br/>
+        <input required type="datetime-local" name="flight_date" id="flight_date">
+        <br/>
+        <br/>
+        <button type="submit">Update Flight</button>
+    </form>
+</body>
+</html>

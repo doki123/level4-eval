@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Flights</title>
+</head>
+<body>
+    <button><a href="/book">Book Flights</a></button>
+    <button><a href="/update">Update Flights</a></button>
+    <button><a href="/checkout">Checkout</a></button>
+    <button><a href="/">Home</a></button>
+    <br/>
+    <br/>
+    <form method="post">
+        <label for="flight_name">Start Location to End Location</label><br/>
+        <input required type="text" id="flight_name" name="flight_name" placeholder="eg San Jose, US to Beijing, China">
+        <br/>
+        <br/>
+        <label for="airline">Airline Name</label><br/>
+        <input required type="text" id="airline" name="airline"><br/><br/>
+        <label for="flight_date">Flight Time</label><br/>
+        <input required type="datetime-local" id="flight_date" name="flight_date"><br/><br/>
+        <label for="capacity">Amount of Plane Seatings</label><br/>
+        <input required type="number" id="capacity" name="capacity" min="1" step="1"><br/><br/>
+        <label for="price">Price Per Seat</label><br/>
+        <input required type="number" id="price" name="price" min="0" step="0.01"><br/><br/>
+        <button type="submit">Create Flight</button>
+    </form>
+</body>
+</html>

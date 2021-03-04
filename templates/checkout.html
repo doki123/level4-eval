@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Checkout</title>
+    <style>
+        table, tr, th, td { border: 1px black solid;
+                        border-collapse: collapse;
+                        padding: 5px; }
+        th, td { padding-left: 20px;
+                 padding-right: 20px; }
+        td { text-align: center; }
+    </style>
+</head>
+<body>
+    <button><a href="/add">Create Flight</a></button>
+    <button><a href="/book">Book Flight</a></button>
+    <button><a href="/update">Update Flight</a></button>
+    <br/>
+    <br/>
+    <table>
+        <tr>
+            <th>Flight Name</th>
+            <th>Airline</th>
+            <th>Flight Time</th>
+            <th>Amount of Seats</th>
+            <th>Price per Seat</th>
+            <th>Delete</th>
+        </tr>
+        {% for r in booked_flights %}
+            <tr>
+                <form method="post" action="/delete">
+                    <td>{{r['name']}}</td>
+                    <td>{{r['airline']}}</td>
+                    <td>{{r['date']}}</td>
+                    <td>{{r['seats']}}</td>
+                    <td>{{r['price']}}</td>
+                    <input hidden type="text" name="name" value="{{r['name']}}">
+                    <input hidden type="text" name="airline" value="{{r['airline']}}">
+                    <input hidden type="text" name="date" value="{{r['date']}}">
+                    <input hidden type="text" name="seats" value="{{r['seats']}}">
+                    <th><button type="submit">X</button></th>
+                </form>
+            </tr>
+        {% endfor %}
+    </table>
+    <br/>
+    <br/>
+    <form method="post" action="/checkout">
+        <button type="submit">Checkout</button>
+    </form>
+</body>
+</html>
